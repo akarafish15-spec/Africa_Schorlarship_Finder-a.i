@@ -1,4 +1,4 @@
-import Mistral from "@mistralai/mistralai";
+import { Mistral } from "@mistralai/mistralai";
 import type { UserProfile, Opportunity } from "@/types";
 
 const mistral = new Mistral({ apiKey: process.env.MISTRAL_API_KEY! });

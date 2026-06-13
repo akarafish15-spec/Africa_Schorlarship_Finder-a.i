@@ -71,14 +71,15 @@ export default function OnboardingForm({
 
       if (error) throw error;
 
-      // Trigger AI matching in background
-      await fetch("/api/matches", {
+      // Trigger AI matching in background (don't await — let it run)
+      fetch("/api/matches", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId }),
-      });
+      }).catch(() => {});
 
-      router.push("/dashboard");
+      // Hard redirect so the server layout picks up the updated session
+      window.location.href = "/dashboard";
     } catch (err) {
       console.error("Save error:", err);
       setSaving(false);

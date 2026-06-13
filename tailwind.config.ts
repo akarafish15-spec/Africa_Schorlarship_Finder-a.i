@@ -1,0 +1,113 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  darkMode: ["class"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Aura AI Design System
+        surface: "#0e1322",
+        "surface-dim": "#0e1322",
+        "surface-bright": "#343949",
+        "surface-container-lowest": "#090e1c",
+        "surface-container-low": "#161b2b",
+        "surface-container": "#1a1f2f",
+        "surface-container-high": "#25293a",
+        "surface-container-highest": "#2f3445",
+        "on-surface": "#dee1f7",
+        "on-surface-variant": "#c2c6d6",
+        "inverse-surface": "#dee1f7",
+        "inverse-on-surface": "#2b3040",
+        outline: "#8c909f",
+        "outline-variant": "#424754",
+        "surface-tint": "#adc6ff",
+        primary: "#adc6ff",
+        "on-primary": "#002e6a",
+        "primary-container": "#4d8eff",
+        "on-primary-container": "#00285d",
+        "inverse-primary": "#005ac2",
+        secondary: "#d0bcff",
+        "on-secondary": "#3c0091",
+        "secondary-container": "#571bc1",
+        "on-secondary-container": "#c4abff",
+        tertiary: "#ffb95f",
+        "on-tertiary": "#472a00",
+        "tertiary-container": "#ca8100",
+        "on-tertiary-container": "#3e2400",
+        error: "#ffb4ab",
+        "on-error": "#690005",
+        "error-container": "#93000a",
+        "on-error-container": "#ffdad6",
+        "primary-fixed": "#d8e2ff",
+        "primary-fixed-dim": "#adc6ff",
+        "on-primary-fixed": "#001a42",
+        "on-primary-fixed-variant": "#004395",
+        "secondary-fixed": "#e9ddff",
+        "secondary-fixed-dim": "#d0bcff",
+        "on-secondary-fixed": "#23005c",
+        "on-secondary-fixed-variant": "#5516be",
+        "tertiary-fixed": "#ffddb8",
+        "tertiary-fixed-dim": "#ffb95f",
+        "on-tertiary-fixed": "#2a1700",
+        "on-tertiary-fixed-variant": "#653e00",
+        background: "#0e1322",
+        "on-background": "#dee1f7",
+        "surface-variant": "#2f3445",
+      },
+      fontFamily: {
+        headline: ["Hanken Grotesk", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+        label: ["Geist", "monospace"],
+      },
+      borderRadius: {
+        lg: "0.5rem",
+        md: "0.75rem",
+        xl: "1rem",
+        "2xl": "1.5rem",
+        full: "9999px",
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        float: "float 6s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "fade-in": "fade-in 0.5s ease-out",
+        "slide-up": "slide-up 0.4s ease-out",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { opacity: "0.6" },
+          "50%": { opacity: "1" },
+        },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "slide-up": {
+          from: { opacity: "0", transform: "translateY(16px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+};
+
+export default config;

@@ -31,7 +31,6 @@ export async function updateSession(request: NextRequest) {
 
   const url = request.nextUrl.clone();
   const isAuthPage = url.pathname.startsWith("/sign-in");
-  const isOnboarding = url.pathname.startsWith("/onboarding");
   const isDashboard =
     url.pathname.startsWith("/dashboard") ||
     url.pathname.startsWith("/matches") ||
